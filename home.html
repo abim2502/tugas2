@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Kedai Kopi</title>
+    <link rel="stylesheet" href="tugas2.css">
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="navbar-logo">Inspirasi<span>Kopi</span>~</a>
+        <div class="navbar-nav">
+            <a href="home.html">Home</a>
+            <a href="tentang.html">Tentang</a>
+            <a href="menu.html">Menu</a>
+            <a href="kontak.html">Kontak</a> 
+        </div> 
+        <div class="navbar-extra">
+            <a href="#" id="search"><i data-feather="search"></i></a>
+            <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+            <a href="#" id="menu"><i data-feather="menu"></i></a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Butuh Inspirasi?<br><span>Nikmati secangkir</span> Kopi</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, enim.</p>
+            <a href="#" class="btn">Buy Now</a>
+        </div>
+    </header>
+
+    <script>
+        // Cek apakah user sudah login
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            window.location.href = "tugas2.html"; // Redirect ke login jika belum login
+        }
+
+        // Tombol Logout
+        document.getElementById("logout").addEventListener("click", function() {
+            localStorage.removeItem("isLoggedIn"); // Hapus status login
+            window.location.href = "tugas2.html"; // Redirect ke login
+        });
+    </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+feather.replace();
+});
+</script>
+
+<script>
+    // Jalankan Feather Icons setelah halaman selesai dimuat
+    document.addEventListener("DOMContentLoaded", function() {
+        feather.replace();
+    });
+
+    // Toggle class active 
+    const navbarNav = document.querySelector('.navbar-nav');
+
+    // Ketika menu diklik
+    document.querySelector('#menu').onclick = () => {
+        navbarNav.classList.toggle('active');
+    };
+
+    // Klik di luar sidebar untuk menghilangkan nav
+    const menu = document.querySelector('#menu');
+
+    document.addEventListener('click', function(e) {
+        if (!menu.contains(e.target) && !navbarNav.contains(e.target)) {
+            navbarNav.classList.remove('active');
+        }
+    });
+</script>
+
+<script src="js/script.js"></script>
+</body>
+</html>

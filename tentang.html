@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami</title>
+    <link rel="stylesheet" href="tugas2.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#"class="navbar-logo">Inspirasi<span>Kopi</span>~</a>
+        <div class="navbar-nav">
+            <a href="home.html">Home</a>
+            <a href="tentang.html">Tentang Kami</a>
+            <a href="menu.html">Menu</a>
+            <a href="kontak.html">Kontak</a>
+        </div>
+        <div class="navbar-extra">
+            <a href="#" id="search"><i data-feather="search"></i></a>
+            <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+            <a href="#" id="menu"><i data-feather="menu"></i></a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1> <span>Tentang</span> Kami</h1>
+    </section>
+
+    <!-- Content Section -->
+    <section class="about">
+        <div class="about-image">
+            <img src="kopi.jpg" alt="Inspirasi Kopi">
+        </div>
+        <div class="about-text">
+            <h2>Kenapa memilih kopi kami?</h2>
+            <p>Kami percaya bahwa secangkir kopi yang sempurna bukan hanya <br>
+                 tentang rasa, tetapi juga pengalaman yang menyertainya. Kopi kami <br>
+                  dipilih dari biji kopi berkualitas tinggi yang berasal dari perkebunan <br>
+                  terbaik, diproses dengan hati-hati untuk menghasilkan cita rasa yang khas dan aroma yang menggugah selera.</p>
+            
+        </div>
+    </section>
+
+    <script>
+        // Jalankan Feather Icons setelah halaman selesai dimuat
+        document.addEventListener("DOMContentLoaded", function() {
+            feather.replace();
+        });
+    
+        // Toggle class active 
+        const navbarNav = document.querySelector('.navbar-nav');
+    
+        // Ketika menu diklik
+        document.querySelector('#menu').onclick = () => {
+            navbarNav.classList.toggle('active');
+        };
+    
+        // Klik di luar sidebar untuk menghilangkan nav
+        const menu = document.querySelector('#menu');
+    
+        document.addEventListener('click', function(e) {
+            if (!menu.contains(e.target) && !navbarNav.contains(e.target)) {
+                navbarNav.classList.remove('active');
+            }
+        });
+    </script>
+    
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

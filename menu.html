@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Inspirasi Kopi</title>
+    <link rel="stylesheet" href="tugas2.css">
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#" class="navbar-logo">Inspirasi<span>Kopi</span>~</a>
+        <div class="navbar-nav">
+            <a href="home.html">Home</a>
+            <a href="tentang.html">Tentang Kami</a>
+            <a href="menu.html">Menu</a>
+            <a href="kontak.html">Kontak</a> 
+        </div> 
+        <div class="navbar-extra">
+            <a href="#" id="search"><i data-feather="search"></i></a>
+            <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+            <a href="#" id="menu"><i data-feather="menu"></i></a>
+        </div>
+    </nav>
+
+    <!-- Section Menu -->
+    <section class="menu">
+        <h1><span>Daftar</span> Menu</h1>
+        <p>"Temukan cita rasa terbaik dalam setiap tegukan! <br>
+            Kami menyajikan berbagai pilihan kopi berkualitas yang diracik dengan biji kopi pilihan"</p>
+        
+        <div class="menu-container">
+            <div class="menu-item">
+                <img src="espresso.jpg" alt="Espresso">
+                <h3>Espresso</h3>
+                <p>IDR 15K</p>
+            </div>
+            <div class="menu-item">
+                <img src="americano.jpg" alt="Americano">
+                <h3>Americano</h3>
+                <p>IDR 18K</p>
+            </div>
+            <div class="menu-item">
+                <img src="cappuccino.jpg" alt="Cappuccino">
+                <h3>Cappuccino</h3>
+                <p>IDR 22K</p>
+            </div>
+            <div class="menu-item">
+                <img src="latte.jpg" alt="Latte">
+                <h3>Latte</h3>
+                <p>IDR 25K</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        feather.replace();
+    </script>
+
+<script>
+    // Jalankan Feather Icons setelah halaman selesai dimuat
+    document.addEventListener("DOMContentLoaded", function() {
+        feather.replace();
+    });
+
+    // Toggle class active 
+    const navbarNav = document.querySelector('.navbar-nav');
+
+    // Ketika menu diklik
+    document.querySelector('#menu').onclick = () => {
+        navbarNav.classList.toggle('active');
+    };
+
+    // Klik di luar sidebar untuk menghilangkan nav
+    const menu = document.querySelector('#menu');
+
+    document.addEventListener('click', function(e) {
+        if (!menu.contains(e.target) && !navbarNav.contains(e.target)) {
+            navbarNav.classList.remove('active');
+        }
+    });
+</script>
+
+</body>
+</html>
